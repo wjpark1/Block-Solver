@@ -38,11 +38,7 @@ As stated above, the class Node is meant to represent a particular tray in our g
 
 Node also makes use of several important methods. Its method addBlock will update instance variable myMatrix to include the name of the block that is passed in as an argument, and its directional methods moveLeft, moveRight, moveUp, and moveDown will take in a block’s coordinates and return the block’s resulting coordinates had the block been moved left, right, up, or down. It is important to note that these methods do not actually move the blocks themselves; they simply return the coordinates of the blocks if they are moved left, right, up, or down. And as discussed earlier, Node has a children() method that plays an integral role in traversing our graph data structure and locating the goal node (if there is one).
 
-**Check my description of heuristic and iterative here
-
 Lastly, two crucial aspects of our program are that 1). it utilizes a heuristic function to organize its priority queue, enabling a “best-first” traversal rather than a depth-first or breadth-first, and 2). it is iterative in nature, rather than recursive. As mentioned earlier, we pass in a Comparator object when we instantiate our priority queue, and this Comparator in turn uses a Heuristic function that takes in a HashSet of blocks and returns a “score” based on how close the HashSet of blocks is to the goal tray configuration, the lower score, the closer the HashSet is. The Comparator uses this information to organize the priority queue in order of “closest node” to “furthest node”.
-
-** Mention iterative aspect here
 
 We did not implement these two changes until the very end, but after we did we noticed significant changes in the runtime of our program and the lack of stack overflow errors that had given us a considerable amount of trouble before. By changing our program to use a best-first traversal and to be iterative rather than recursive, we made our program more able to locate the goal node quickly, and reduce the number of pending operations to zero, so that each time we called children our stack was empty.
 
@@ -89,7 +85,7 @@ Experiment 3:
 Summary: We made our program more efficient by having it rely on fewer pending recursive calls. This made it pass virtually all of the tests in the medium folder, but we had now turned our attention to the hard tests, nearly all of which we were still failing.
 
 Results:
-
+Passed all of the tests in the medium folder.
 
  
 
